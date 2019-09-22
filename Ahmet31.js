@@ -1,12 +1,16 @@
 function getReport(arr) {
-
-    // arr --> marks
-
-    let filter1 = arr.filter(x => {
-        return x.name[x.name.length - 1] == "a";
-    });
-
-    console.log(filter1);
+    let arrMarks = [];
+    for (let x of arr) {
+        arrMarks.push(x.mark);
+    }
+    minNumber = Math.min(...arrMarks);
+    maxNumber = Math.max(...arrMarks);
+    avarageNumber = arrMarks.reduce((total, item) => total + item) / arrMarks.length;
+    console.log(
+        "En düşük not", minNumber, "\n",
+        "En yüksek not", maxNumber, "\n",
+        "Ortalama not", avarageNumber.toFixed(2)
+    );
 }
 
 getReport([{
